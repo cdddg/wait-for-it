@@ -32,7 +32,9 @@ jobs:
           echo "No tag found! Exiting..."
           exit 1
         fi
+
   build-and-push:
+    needs: check-tag
     runs-on: ubuntu-latest
     permissions:
       contents: read
